@@ -6,7 +6,7 @@
 	<title>Home</title>
 </head>
 <body>
-	<header style="background-color:lightgreen;">
+	<header style="background-color:lightgrey;">
 		<h1>Danish Faris Bin Sukhairul Nizam</h1>
 		<p>It Is What It Is</p>
 	</header>
@@ -214,6 +214,64 @@
 	            <p>
 	                <label for="phone">Phone Number</label><br>
 	                <input type="tel" id="phone" name="phone" style="border: 2px solid navy; padding: 6px; font-size: 14px;" placeholder="0123456789">
+	            </p>
+
+	            <p>
+	                <label for="urgency">Response Urgency (1 = Low, 5 = High)</label><br>
+	                <input type="number" id="urgency" name="urgency" min="1" max="5">
+	            </p>
+
+	            <p>
+	                <label for="meeting">Preferred Meeting Date</label><br>
+	                <input type="date" id="meeting" name="meeting">
+	            </p>
+
+	            <p>
+	                <label for="budget">Estimated Budget (RM)</label><br>
+	                <input type="range" id="budget" name="budget" min="100" max="10000">
+	            </p>
+
+	            <p>
+	                <label for="subject">Subject</label><br>
+	                <select id="subject" name="subject" style="padding: 5px; font-size: 14px;">
+	                    <optgroup label="Work">
+	                        <option value="web">Web Development</option>
+	                        <option value="software">Software Engineering</option>
+	                    </optgroup>
+	                    <optgroup label="Personal">
+	                        <option value="networking">Networking</option>
+	                        <option value="other">Other</option>
+	                    </optgroup>
+	                </select>
+	            </p>
+
+	            <p>Preferred Contact Method</p>
+	            <p>
+	                <input type="radio" id="pref_email" name="contact_pref" value="email" required>
+	                <label for="pref_email">Email</label><br>
+	                
+	                <input type="radio" id="pref_call" name="contact_pref" value="call">
+	                <label for="pref_call">Call</label><br>
+	                
+	                <input type="radio" id="pref_whatsapp" name="contact_pref" value="whatsapp">
+	                <label for="pref_whatsapp">WhatsApp</label>
+	            </p>
+
+	            <p>Services Required</p>
+	            <p>
+	                <input type="checkbox" id="svc_frontend" name="services" value="frontend">
+	                <label for="svc_frontend">Frontend UI</label><br>
+	                
+	                <input type="checkbox" id="svc_backend" name="services" value="backend">
+	                <label for="svc_backend">Backend Logic</label><br>
+	                
+	                <input type="checkbox" id="svc_db" name="services" value="database">
+	                <label for="svc_db">Database Design</label>
+	            </p>
+
+	            <p>
+	                <label for="message">Message</label><br>
+	                <textarea id="message" name="message" rows="5" cols="40" placeholder="Tell me more..." required style="border: 1px solid #999; padding: 8px; font-size: 14px;"></textarea>
 	            </p>
 
 	            <p>
