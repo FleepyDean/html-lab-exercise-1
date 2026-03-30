@@ -111,9 +111,70 @@ header {
 }
 
 nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
     background-color: var(--color-primary);
     padding: var(--space-sm) var(--space-md);
+}
+
+.nav-brand {
     color: var(--color-surface);
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+}
+
+nav a {
+    color: var(--color-surface);
+    text-decoration: none;
+    font-weight: bold;
+    padding: var(--space-sm) 0;
+    transition: color 0.2s ease, background-color 0.2s ease; 
+}
+
+nav a:hover {
+    color: var(--color-accent);
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+
+nav a.active {
+    border-bottom: 3px solid var(--color-accent);
+    color: var(--color-accent);
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    background-color: var(--color-surface);
+    padding: var(--space-lg);
+    border-bottom: 2px solid var(--color-muted);
+    gap: var(--space-lg);
+}
+
+.header-text {
+    flex: 1;
+}
+
+.header-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
 main {
