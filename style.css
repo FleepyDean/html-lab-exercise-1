@@ -1,3 +1,10 @@
+/* ============================================
+    BREAKPOINTS
+    mobile-first base: 320px and up (default)
+    tablet: @media (min-width: 600px)
+    desktop: @media (min-width: 1024px)
+   ============================================ */
+
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
@@ -226,42 +233,33 @@ input:focus, textarea:focus, select:focus {
 
 .page-cards {
     display: grid;
-    /* Auto-fit collapses empty tracks and stretches items to fill the row[cite: 288]. Minmax ensures cards never shrink below 260px  */
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 1.5rem; /* Minimum 1.5rem gap required [cite: 284] */
-    align-content: stretch; /* Ensures cards in the same row match visually  */
+    gap: 1.5rem;
+    align-content: stretch;
 }
 
-/* Feature element spanning multiple columns  */
 .span-full {
     grid-column: span 2; 
     margin-bottom: var(--space-sm);
 }
 
-/* Base Card Styling */
 .card {
     background-color: var(--color-surface);
     padding: var(--space-md);
     border: 1px solid var(--color-muted);
     border-radius: 8px;
     
-    /* Required transition for the hover lift effect  */
     transition: transform 0.2s ease;
 }
 
-/* Hover transform effect  */
 .card:hover {
     transform: translateY(-4px);
-    /* Optional: Adding a shadow makes the lift effect pop even more */
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); 
 }
 
-/* --- 2. Sidebar Layout (skills.html) --- */
 .layout-sidebar {
     display: grid;
-    /* Task 4 requirement: Main content takes 1fr, sidebar is fixed at 280px  */
     grid-template-columns: 1fr 280px; 
-    /* Using a larger gap (4rem) to match the airy look in your screenshot, easily satisfying the 'at least 1.5rem' requirement [cite: 283, 284] */
     gap: 4rem; 
     align-items: start; 
     max-width: 1200px;
@@ -269,14 +267,13 @@ input:focus, textarea:focus, select:focus {
     padding: 0 20px;
 }
 
-/* Make the sidebar clean and borderless like the screenshot */
+
 .layout-sidebar aside {
     background-color: transparent;
     padding: 0;
     border: none;
 }
 
-/* Format the Glossary dictionary list to match the picture */
 .layout-sidebar dt {
     font-weight: bold;
     margin-top: 1.5rem;
@@ -293,4 +290,63 @@ input:focus, textarea:focus, select:focus {
     display: grid;
     grid-template-columns: 1fr 220px; 
     gap: var(--space-lg); 
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+nav {
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+nav ul {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+header {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+}
+
+.page-cards,
+.layout-sidebar {
+    grid-template-columns: 1fr;
+}
+
+
+@media (min-width: 600px) {
+    header {
+        flex-direction: row;
+        text-align: left;
+    }
+
+    .page-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    nav {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    
+    nav ul {
+        flex-direction: row;
+        width: auto;
+    }
+
+    .layout-sidebar {
+        grid-template-columns: 1fr 280px;
+    }
+
+    .page-cards {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
