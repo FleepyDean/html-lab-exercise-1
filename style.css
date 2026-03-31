@@ -402,24 +402,23 @@ input[type="date"],
 textarea,
 select {
     width: 100%;
-    padding: 1.2rem; /* Uniform padding */
-    border: 1px solid var(--color-muted); /* Uniform border */
-    border-radius: 6px; /* Uniform border-radius */
-    font-family: var(--font-body); /* Overrides browser default font */
+    padding: 1.2rem;
+    border: 1px solid var(--color-muted);
+    border-radius: 6px;
+    font-family: var(--font-body);
     font-size: 1.6rem;
-    background-color: #ffffff; /* Clean white to contrast the beige background */
+    background-color: #ffffff;
     color: var(--color-text);
     margin-top: 0.8rem;
     margin-bottom: var(--space-md);
     box-sizing: border-box;
 }
 
-/* --- 2. Fieldset and Legend --- */
 fieldset {
     border: 1px solid var(--color-muted);
     border-radius: 8px;
     padding: var(--space-lg);
-    background-color: var(--color-surface); /* Blends with your warm theme */
+    background-color: var(--color-surface);
     margin-bottom: var(--space-lg);
 }
 
@@ -431,12 +430,11 @@ legend {
     padding: 0 10px;
 }
 
-/* --- 3. Range Slider --- */
 input[type="range"] {
     width: 100%;
     margin-top: 1rem;
     margin-bottom: var(--space-md);
-    accent-color: var(--color-accent); /* Tints the slider to match your theme */
+    accent-color: var(--color-accent);
 }
 
 button[type="submit"] {
