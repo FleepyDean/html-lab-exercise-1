@@ -40,7 +40,7 @@ h1 {
 
 h2 {
     font-family: var(--font-heading);
-    font-size: 2.4rem;
+    font-size: 2.8rem;
     line-height: 1.3;
     color: var(--color-secondary);
     margin-bottom: var(--space-sm);
@@ -48,14 +48,14 @@ h2 {
 
 h3 {
     font-family: var(--font-heading);
-    font-size: 2rem;
+    font-size: 2.2rem;
     line-height: 1.4;
     color: var(--color-text);
 }
 
 h4 {
     font-family: var(--font-heading);
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     line-height: 1.4;
     color: var(--color-muted);
 }
@@ -181,6 +181,8 @@ main {
     background-color: #ffffff;
     color: var(--color-text);
     padding: var(--space-lg);
+    margin: 0 auto;
+    max-width: 1200px;
 }
 
 footer {
@@ -220,4 +222,75 @@ a:active {
 input:focus, textarea:focus, select:focus {
     outline: none;
     box-shadow: 0 0 0 3px var(--color-accent);
+}
+
+.page-cards {
+    display: grid;
+    /* Auto-fit collapses empty tracks and stretches items to fill the row[cite: 288]. Minmax ensures cards never shrink below 260px  */
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem; /* Minimum 1.5rem gap required [cite: 284] */
+    align-content: stretch; /* Ensures cards in the same row match visually  */
+}
+
+/* Feature element spanning multiple columns  */
+.span-full {
+    grid-column: span 2; 
+    margin-bottom: var(--space-sm);
+}
+
+/* Base Card Styling */
+.card {
+    background-color: var(--color-surface);
+    padding: var(--space-md);
+    border: 1px solid var(--color-muted);
+    border-radius: 8px;
+    
+    /* Required transition for the hover lift effect  */
+    transition: transform 0.2s ease;
+}
+
+/* Hover transform effect  */
+.card:hover {
+    transform: translateY(-4px);
+    /* Optional: Adding a shadow makes the lift effect pop even more */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); 
+}
+
+/* --- 2. Sidebar Layout (skills.html) --- */
+.layout-sidebar {
+    display: grid;
+    /* Task 4 requirement: Main content takes 1fr, sidebar is fixed at 280px  */
+    grid-template-columns: 1fr 280px; 
+    /* Using a larger gap (4rem) to match the airy look in your screenshot, easily satisfying the 'at least 1.5rem' requirement [cite: 283, 284] */
+    gap: 4rem; 
+    align-items: start; 
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* Make the sidebar clean and borderless like the screenshot */
+.layout-sidebar aside {
+    background-color: transparent;
+    padding: 0;
+    border: none;
+}
+
+/* Format the Glossary dictionary list to match the picture */
+.layout-sidebar dt {
+    font-weight: bold;
+    margin-top: 1.5rem;
+    color: var(--color-text); 
+}
+
+.layout-sidebar dd {
+    margin-left: 0;
+    margin-top: 0.5rem;
+    line-height: 1.6;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 220px; 
+    gap: var(--space-lg); 
 }
