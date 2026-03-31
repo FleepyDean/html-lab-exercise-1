@@ -232,7 +232,6 @@ a:hover {
 
 a:active {
     color: var(--color-secondary);
-    font-weight: bold;
 }
 
 .card-panel {
@@ -286,7 +285,7 @@ a.card h3 {
 }
 
 a.card:hover h3 {
-    color: var(--color-accent); /* Heading changes color when hovering over the card */
+    color: var(--color-accent);
 }
 
 .layout-sidebar {
